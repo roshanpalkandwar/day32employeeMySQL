@@ -1,5 +1,6 @@
 create database payroll_services1
 
+<<<<<<< HEAD
 use payroll_services1
 
 create table employee_payroll1
@@ -11,3 +12,6 @@ create table employee_payroll1
 	
 )
 select * from  employee_payroll1
+=======
+use payroll_services1
+>>>>>>> uc1-creatDtabase
