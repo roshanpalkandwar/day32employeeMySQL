@@ -65,3 +65,8 @@ WHERE Gender = 'M' GROUP BY Gender;
 
 SELECT COUNT(Salary) as CountSalaryF FROM Employee_Payroll1
 WHERE Gender = 'F' GROUP BY Gender;
+
+alter table employee_payroll1 add Gender char(1)
+alter table employee_payroll1 add phoneNumber Varchar(255) 
+alter table employee_payroll1 add address Varchar(255) not null default 'TBD'
+alter table employee_payroll1 add Department Varchar(255) not null default 'non-Def' 
