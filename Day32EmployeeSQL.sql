@@ -12,12 +12,56 @@ create table employee_payroll1
 	
 )
 select * from  employee_payroll1
-insert into employee_payroll1(name,salary,startDate) Values('Anand',54555,GetDate())
+insert into employee_payroll1(name,salary,startDate) Values('rita',54555,GetDate()),
+                                                           ('rohit',16000,GETDATE()),
+		                                                   ('somaya',17000,GETDATE()),
+		                                                   ('Sonali',15000,GETDATE()),
+	                                                    	('rakesh',20000,GETDATE()),
+		                                                   ('vikas',25000,GETDATE()),
+		                                                   ('Ankita',27000,GETDATE());	
+
 
 alter table employee_payroll1 add Gender char(1)
 
-update employee_payroll1 set Gender ='M' where name ='bill' or name = 'Anand'
+UPDATE Employee_Payroll1
+SET Gender = 'F' WHERE ID in (3,6,9);
+
+UPDATE Employee_Payroll1
+SET Gender = 'M' WHERE ID in (4,5,7,8);
 
 select* 
 from employee_payroll1
 
+SELECT SUM(Salary) as TotalSalaryM FROM Employee_Payroll1
+WHERE Gender = 'M' GROUP BY Gender;
+
+SELECT SUM(Salary) as TotalSalaryF FROM Employee_Payroll1
+WHERE Gender = 'F' GROUP BY Gender;
+
+-------AVG() Function--------
+SELECT AVG(Salary) as AvgSalaryM FROM Employee_Payroll1
+WHERE Gender = 'M' GROUP BY Gender;
+
+SELECT AVG(Salary) as AvgSalaryF FROM Employee_Payroll1
+WHERE Gender = 'F' GROUP BY Gender;
+
+-------MIN() Function--------
+SELECT MIN(Salary) as MinSalaryM FROM Employee_Payroll1
+WHERE Gender = 'M' GROUP BY Gender;
+
+SELECT MIN(Salary) as MinSalaryF FROM Employee_Payroll1
+WHERE Gender = 'F' GROUP BY Gender;
+
+-------MAX() Function--------
+SELECT MAX(Salary) as MaxSalaryM FROM Employee_Payroll1
+WHERE Gender = 'M' GROUP BY Gender;
+
+SELECT MAX(Salary) as MaxSalaryF FROM Employee_Payroll1
+WHERE Gender = 'F' GROUP BY Gender;
+
+-------COUNT() Function--------
+SELECT COUNT(Salary) as CountSalaryM FROM Employee_Payroll1
+WHERE Gender = 'M' GROUP BY Gender;
+
+SELECT COUNT(Salary) as CountSalaryF FROM Employee_Payroll1
+WHERE Gender = 'F' GROUP BY Gender;
