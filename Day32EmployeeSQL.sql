@@ -89,6 +89,9 @@ from employee_payroll1
 		Taxable_Pay int not null ,
 		tax int not null
 		)
+		insert into Taxable(tax_id,Deductions,Taxable_Pay,tax) values(453,4500,(40000-4500),0.05*(40000-4500));
+
+
 
 select*
 from Taxable
@@ -101,6 +104,7 @@ from Taxable
 	NetPay int not null,
 	tax_id int not  null default ('1') foreign key references Taxable(tax_id)
 	)
+	insert into PayrollDetails(Payroll_id,Basic_Pay,NetPay,tax_id) values(21,40000,(40000-4500-0.05*35500),453);
 
 select*
 from PayrollDetails
@@ -115,10 +119,21 @@ from PayrollDetails
 		Payroll_id int not null default ('01') foreign key references PayrollDetails(Payroll_id)
 			
 	)
+	insert into Contact_Details(name,phoneNumber,Address,Payroll_id) values('bill','9834734334','pawansutnagar',21)
+
 
 select*
 from Contact_Details
 
+select*
+from Contact_Details
+select*
+from PayrollDetails
+select*
+from Taxable
+
+SELECT Basic_Pay FROM PayrollDetails
+WHERE  Payroll_id = 21
 
 
 
